@@ -1,21 +1,29 @@
 package instagram
 
+// type Post struct {
+// 	Graphql struct {
+// 		ShortcodeMedia struct {
+// 			EdgeMediaPreviewLike struct {
+// 				Count int `json:"count"`
+// 			} `json:"edge_media_preview_like"`
+// 			Location struct {
+// 				Name        string `json:"name"`
+// 				AddressJSON string `json:"address_json"`
+// 			} `json:"location"`
+// 		} `json:"shortcode_media"`
+// 	} `json:"graphql"`
+// }
+
 type Post struct {
 	Graphql struct {
 		ShortcodeMedia struct {
-			Owner struct {
-				Username                 string `json:"username"`
-				Fullname                 string `json:"full_name"`
-				EdgeOwnerToTimelineMedia struct {
-					Count int `json:"count"`
-				} `json:"edge_owner_to_timeline_media"`
-				EdgeFollowBy struct {
-					Count int `json:"count"`
-				} `json:"edge_followed_by"`
-			} `json:"owner"`
+			DisplayURL           string `json:"display_url"`
+			EdgeMediaPreviewLike struct {
+				Count int `json:"count"`
+			} `json:"edge_media_preview_like"`
 			Location struct {
 				Name        string `json:"name"`
-				AddressJson string `json:"address_json"`
+				AddressJSON string `json:"address_json"`
 			} `json:"location"`
 		} `json:"shortcode_media"`
 	} `json:"graphql"`
